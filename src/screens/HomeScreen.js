@@ -1,14 +1,22 @@
 import React from 'react';
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = props => {
   return (
     <View>
       <Text style={styles.text}>This is the HomeScreen</Text>
       <Button
-        onPress={() => console.log('asdasd')}
+        onPress={() => props.navigation.navigate('Components')}
         title="Go to Components Demo"
       ></Button>
+
+      <Button
+        onPress={() => props.navigation.navigate('List')}
+        title="Go to List Demo"
+      ></Button>
+      {/* <TouchableOpacity onPress={() => console.log('List Pressed')}>
+        <Text>Go to List Demo</Text>
+      </TouchableOpacity> */}
     </View>
   );
 };
@@ -16,7 +24,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 30
-  }
+  },
 });
 
 export default HomeScreen;
